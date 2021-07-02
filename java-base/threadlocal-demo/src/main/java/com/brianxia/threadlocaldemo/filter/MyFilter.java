@@ -15,7 +15,6 @@ import java.io.IOException;
 @WebFilter(filterName = "myfilter",urlPatterns = "/*")
 public class MyFilter extends GenericFilter {
 
-
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
@@ -25,11 +24,14 @@ public class MyFilter extends GenericFilter {
             if(a == null || !request.getParameter("a").equals("1")){
                 MyThreadLocal.myThreadLocal.set("123");
             }
+            MyThreadLocal.myThreadLocal = null;
+
             filterChain.doFilter(servletRequest,servletResponse);
         }finally {
-            //调用remove方法溢出threadLocal中的变量
             MyThreadLocal.myThreadLocal.remove();
         }
+
+
 
     }
 }
