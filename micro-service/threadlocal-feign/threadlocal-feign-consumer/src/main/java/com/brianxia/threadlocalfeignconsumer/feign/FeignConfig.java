@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FeignConfig {
     @Bean
-    RequestInterceptor requestInterceptor(){
+    RequestInterceptor requestInterceptor() {
         return requestTemplate -> {
             requestTemplate.header("userId", UserThreadLocal.userId.get());
         };

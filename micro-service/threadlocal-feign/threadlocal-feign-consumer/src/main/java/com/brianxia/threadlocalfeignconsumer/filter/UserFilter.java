@@ -13,11 +13,12 @@ import java.io.IOException;
  * @version 1.0
  * @date 2021/7/3 18:31
  */
-@WebFilter(filterName = "userFilter",urlPatterns = "/*")
+@WebFilter(filterName = "userFilter", urlPatterns = "/*")
 public class UserFilter extends GenericFilterBean {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         UserThreadLocal.userId.set(request.getHeader("userId"));
-        filterChain.doFilter(request, servletResponse);    }
+        filterChain.doFilter(request, servletResponse);
+    }
 }

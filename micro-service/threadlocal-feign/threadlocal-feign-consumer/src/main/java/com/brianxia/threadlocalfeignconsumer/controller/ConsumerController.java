@@ -19,7 +19,7 @@ public class ConsumerController {
     private ProviderFeign providerFeign;
 
     @GetMapping("/test")
-    public String getHeader(){
+    public String getHeader() {
         return providerFeign.getHeader();
     }
 

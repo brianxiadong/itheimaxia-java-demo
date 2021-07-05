@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 public class ProviderController {
 
     @GetMapping("/test")
-    public String getHeader(HttpServletRequest request){
+    public String getHeader(HttpServletRequest request) {
         return request.getHeader("userId");
     }
 }
