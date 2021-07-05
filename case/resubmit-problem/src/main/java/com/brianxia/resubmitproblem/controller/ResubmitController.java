@@ -14,6 +14,7 @@ import java.util.UUID;
  * @author brianxia
  * @version 1.0
  * @date 2021/7/5 15:47
+ * 解决重复提交问题，使用redis原子性操作
  */
 @RestController
 public class ResubmitController {
