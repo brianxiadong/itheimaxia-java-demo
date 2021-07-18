@@ -5,13 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>java-base</artifactId>
+    <artifactId>jvm</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>proxy</module>
-        <module>threadpool</module>
-        <module>design-patterns</module>
+        <module>chapter1-hsdb</module>
     </modules>
 
     <properties>
