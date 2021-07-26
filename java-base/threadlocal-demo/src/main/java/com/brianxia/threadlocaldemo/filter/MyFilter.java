@@ -18,18 +18,19 @@ public class MyFilter extends GenericFilter {
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 
+        System.out.println(Thread.currentThread().getName());
         try{
+
             HttpServletRequest request = (HttpServletRequest) servletRequest;
             String a = request.getParameter("a");
             if(a == null || !request.getParameter("a").equals("1")){
                 MyThreadLocal.myThreadLocal.set("123");
             }
-            MyThreadLocal.myThreadLocal = null;
-
             filterChain.doFilter(servletRequest,servletResponse);
         }finally {
             MyThreadLocal.myThreadLocal.remove();
         }
+
 
 
 
